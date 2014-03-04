@@ -11,10 +11,12 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 boost::atomic<boost::int32_t> accumulator;
+hpx::lcos::local::condition_variable result_cv;
 
 void increment(boost::int32_t i)
 {
     accumulator += i;
+    result_cv.notify_one();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -104,6 +106,7 @@ int hpx_main()
     }
 #   endif
 
+    hpx::lcos::local::no_mutex result_mutex;
     hpx::util::spinlock::scoped_lock l(result_mutex);
 #   if !defined(BOOST_NO_CXX11_LAMBDAS) && !defined(BOOST_NO_CXX11_AUTO_DECLARATIONS)
     result_cv.wait_for(result_mutex, boost::chrono::seconds(1),
