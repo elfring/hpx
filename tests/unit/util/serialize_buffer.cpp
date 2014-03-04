@@ -47,8 +47,7 @@ void test(hpx::id_type dest, char* send_buffer, std::size_t size)
     typedef Buffer buffer_type;
     buffer_type recv_buffer;
 
-    std::vector<hpx::unique_future<buffer_type> > recv_buffers;
-    recv_buffers.resize(10);
+    std::vector<hpx::unique_future<buffer_type> > recv_buffers(10);
 
     Action act;
     for(std::size_t j = 0; j != 10; ++j)
@@ -73,8 +72,7 @@ void test_stateful_allocator(hpx::id_type dest, char* send_buffer,
     typedef buffer_allocator_type buffer_type;
     buffer_type recv_buffer;
 
-    std::vector<hpx::unique_future<buffer_type> > recv_buffers;
-    recv_buffers.resize(10);
+    std::vector<hpx::unique_future<buffer_type> > recv_buffers(10);
 
     bounce_allocator_action act;
     for(std::size_t j = 0; j != 10; ++j)
