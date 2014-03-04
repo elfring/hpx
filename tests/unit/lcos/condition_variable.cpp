@@ -91,7 +91,7 @@ struct wait_for_flag
 
     void wait_until_without_predicate()
     {
-        boost::system_time const timeout=boost::get_system_time()+boost::posix_time::seconds(5);
+        boost::system_time const timeout=boost::get_system_time()+boost::posix_time::milliseconds(5);
 
         boost::unique_lock<hpx::lcos::local::spinlock> lock(mutex);
         while(!flag)
@@ -106,7 +106,7 @@ struct wait_for_flag
 
     void wait_until_with_predicate()
     {
-        boost::system_time const timeout=boost::get_system_time()+boost::posix_time::seconds(5);
+        boost::system_time const timeout=boost::get_system_time()+boost::posix_time::milliseconds(5);
         boost::unique_lock<hpx::lcos::local::spinlock> lock(mutex);
         if(cond_var.wait_until(lock,timeout,check_flag(flag)) && flag)
         {
@@ -116,7 +116,7 @@ struct wait_for_flag
     void relative_wait_until_with_predicate()
     {
         boost::unique_lock<hpx::lcos::local::spinlock> lock(mutex);
-        if(cond_var.wait_for(lock,boost::posix_time::seconds(5),check_flag(flag)) && flag)
+        if(cond_var.wait_for(lock,boost::posix_time::milliseconds(5),check_flag(flag)) && flag)
         {
             ++woken;
         }
@@ -461,7 +461,7 @@ void condition_test_waits(condition_test_data* data)
     // Test wait_until.
     boost::posix_time::ptime xt =
         boost::posix_time::second_clock::local_time()
-      + boost::posix_time::seconds(10);
+      + boost::posix_time::milliseconds(10);
     while (data->notified != 3)
         data->condition.wait_until(lock, xt);
     HPX_TEST(lock ? true : false);
@@ -471,7 +471,7 @@ void condition_test_waits(condition_test_data* data)
 
     // Test predicate wait_until.
     xt = boost::posix_time::second_clock::local_time()
-       + boost::posix_time::seconds(10);
+       + boost::posix_time::milliseconds(10);
     cond_predicate pred(data->notified, 4);
     HPX_TEST(data->condition.wait_until(lock, xt, pred));
     HPX_TEST(lock ? true : false);
@@ -482,7 +482,7 @@ void condition_test_waits(condition_test_data* data)
 
     // Test predicate wait_for
     cond_predicate pred_rel(data->notified, 5);
-    HPX_TEST(data->condition.wait_for(lock, boost::posix_time::seconds(10), pred_rel));
+    HPX_TEST(data->condition.wait_for(lock, boost::posix_time::milliseconds(10), pred_rel));
     HPX_TEST(lock ? true : false);
     HPX_TEST(pred_rel());
     HPX_TEST_EQ(data->notified, 5);
@@ -500,7 +500,7 @@ void test_condition_waits()
         boost::unique_lock<hpx::lcos::local::spinlock> lock(data.mutex);
         HPX_TEST(lock ? true : false);
 
-        hpx::this_thread::sleep_for(boost::chrono::seconds(1));
+        hpx::this_thread::sleep_for(boost::chrono::milliseconds(1));
         data.notified++;
         data.condition.notify_one();
         while (data.awoken != 1)
@@ -508,7 +508,7 @@ void test_condition_waits()
         HPX_TEST(lock ? true : false);
         HPX_TEST_EQ(data.awoken, 1);
 
-        hpx::this_thread::sleep_for(boost::chrono::seconds(1));
+        hpx::this_thread::sleep_for(boost::chrono::milliseconds(1));
         data.notified++;
         data.condition.notify_one();
         while (data.awoken != 2)
@@ -516,7 +516,7 @@ void test_condition_waits()
         HPX_TEST(lock ? true : false);
         HPX_TEST_EQ(data.awoken, 2);
 
-        hpx::this_thread::sleep_for(boost::chrono::seconds(1));
+        hpx::this_thread::sleep_for(boost::chrono::milliseconds(1));
         data.notified++;
         data.condition.notify_one();
         while (data.awoken != 3)
@@ -524,7 +524,7 @@ void test_condition_waits()
         HPX_TEST(lock ? true : false);
         HPX_TEST_EQ(data.awoken, 3);
 
-        hpx::this_thread::sleep_for(boost::chrono::seconds(1));
+        hpx::this_thread::sleep_for(boost::chrono::milliseconds(1));
         data.notified++;
         data.condition.notify_one();
         while (data.awoken != 4)
@@ -533,7 +533,7 @@ void test_condition_waits()
         HPX_TEST_EQ(data.awoken, 4);
 
 
-        hpx::this_thread::sleep_for(boost::chrono::seconds(1));
+        hpx::this_thread::sleep_for(boost::chrono::milliseconds(1));
         data.notified++;
         data.condition.notify_one();
         while (data.awoken != 5)
