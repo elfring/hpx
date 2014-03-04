@@ -61,7 +61,7 @@ struct scratcher
     {
         global_scratch += r;
     }
-}
+};
 
 void measure_action_futures(boost::uint64_t count, bool csv)
 {
