@@ -113,7 +113,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -323,7 +323,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -625,7 +625,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -927,7 +927,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -1229,7 +1229,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -1531,7 +1531,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -1833,7 +1833,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -2135,7 +2135,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -2437,7 +2437,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -2739,7 +2739,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -3041,7 +3041,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -3343,7 +3343,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -3645,7 +3645,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -3947,7 +3947,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -4249,7 +4249,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         
@@ -4551,7 +4551,7 @@
                 << get_gid()
                 ;
         }
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
         
         
         

@@ -129,7 +129,7 @@ namespace hpx { namespace traits
             return component_type_database<
                 lcos::base_lco_with_value<
                     result_type
-                  , typename Action::result_type
+                  , typename Action::remote_result_type
                 >
             >::get();
         }
@@ -139,7 +139,7 @@ namespace hpx { namespace traits
             component_type_database<
                 lcos::base_lco_with_value<
                     result_type
-                  , typename Action::result_type
+                  , typename Action::remote_result_type
                 >
             >::set(t);
         }
@@ -304,7 +304,7 @@ namespace hpx { namespace traits
                 ;
         }
 
-        typedef typename Action::result_type remote_result;
+        typedef typename Action::remote_result_type remote_result;
 
         // This is called by our action after it executed. The argument is what
         // has been calculated by the action. The result has to be sent to all 
