@@ -21,8 +21,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -31,8 +31,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
@@ -225,8 +225,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -235,8 +235,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
@@ -527,8 +527,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -537,8 +537,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
@@ -829,8 +829,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -839,8 +839,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
@@ -1131,8 +1131,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -1141,8 +1141,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
@@ -1433,8 +1433,8 @@
       , Result
     >
         : ::hpx::lcos::base_lco_with_value<
-              typename traits::promise_remote_result<Result>::type
-            , typename Action::result_type
+              typename Action::result_type
+            , typename Action::remote_result_type
           >
     {
         typedef
@@ -1443,8 +1443,8 @@
         typedef util::detail::value_or_error<result_type> data_type;
         typedef
             hpx::lcos::base_lco_with_value<
-                result_type
-              , typename Action::result_type
+                typename Action::result_type
+              , typename Action::remote_result_type
             >
             lco_type;
         typedef
